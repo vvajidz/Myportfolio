@@ -136,7 +136,7 @@ const Index = () => {
               </h1>
             </div>
             <p className="text-xl md:text-2xl text-primary-foreground/90 font-light">
-              MERN Stack Developer | Cybersecurity Enthusiast
+              MERN Stack Developer 
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button 
