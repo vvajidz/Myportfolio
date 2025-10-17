@@ -151,7 +151,7 @@ const Index = () => {
                 onClick={() => scrollToSection("projects")}
                 variant="outline"
                 size="lg"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary"
               >
                 View Projects
               </Button>
