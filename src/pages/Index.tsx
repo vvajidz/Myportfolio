@@ -1,11 +1,13 @@
 import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@/ui/button";
+import { Card } from "@/ui/card";
+import { Badge } from "@/ui/badge";
 import profileImage from "@/assets/profile.jpg";
 import { useEffect } from "react";
+import Tilt from "react-parallax-tilt";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import AboutSection from "@/components/About";
 
 const Index = () => {
   const skills = {
@@ -127,6 +129,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center pt-20 px-4 bg-gradient-to-br from-primary via-primary to-accent">
+        <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable glareMaxOpacity={0.2} scale={1.05}>
         <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-primary-foreground order-2 md:order-1" data-aos="fade-right">
             <div className="space-y-2">
@@ -167,37 +170,12 @@ const Index = () => {
             </div>
           </div>
         </div>
+        </Tilt>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 bg-secondary">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-primary font-playfair" data-aos="fade-up">About Me</h2>
-          <Card className="p-8 bg-card" data-aos="fade-up" data-aos-delay="100">
-            <div className="space-y-4 text-lg">
-              <p>
-                I'm a passionate MERN Stack Developer with a strong foundation in both frontend and backend technologies. 
-                My journey in tech is complemented by specialized training in cybersecurity, giving me a unique perspective 
-                on building secure, scalable applications.
-              </p>
-              <p>
-                Currently working as a Frontend Developer Intern at Bridgeon Solutions, I've contributed to real-world 
-                projects using modern technologies like React, Next.js, TypeScript, and Node.js. I believe in writing 
-                clean, maintainable code and creating exceptional user experiences.
-              </p>
-              <p>
-                With certifications in ethical hacking and extensive hands-on experience in full-stack development, 
-                I bring both technical expertise and security awareness to every project I work on.
-              </p>
-              <div className="flex flex-wrap gap-3 pt-4">
-                <Badge className="bg-primary text-primary-foreground">3+ Years Experience</Badge>
-                <Badge className="bg-accent text-accent-foreground">CEH Certified</Badge>
-                <Badge className="bg-primary text-primary-foreground">Full-Stack Developer</Badge>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section>
+
+      <AboutSection />
 
       {/* Skills Section */}
       <section id="skills" className="py-20 px-4 bg-background">
@@ -269,34 +247,57 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-6xl font-bold mb-12 text-primary font-playfair" data-aos="fade-up">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="p-8 bg-card hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h3 className="text-3xl font-bold text-accent mb-2 font-playfair">{project.name}</h3>
-                <p className="text-lg text-muted-foreground mb-4 font-light">{project.subtitle}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech) => (
-                    <Badge key={tech} variant="outline" className="border-primary text-primary">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <ul className="space-y-2">
-                  {project.description.map((desc, idx) => (
-                    <li key={idx} className="flex gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      <span>{desc}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+<section id="projects" className="py-20 px-4 bg-background">
+  <div className="container mx-auto max-w-6xl">
+    <h2
+      className="text-4xl md:text-6xl font-bold mb-12 text-primary font-playfair"
+      data-aos="fade-up"
+    >
+      Featured Projects
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-8">
+      {projects.map((project, index) => (
+        <Tilt
+          key={index}
+          tiltMaxAngleX={10}
+          tiltMaxAngleY={10}
+          glareEnable
+          glareMaxOpacity={0.2}
+          scale={1.05}
+        >
+          <Card
+            className="p-8 bg-card hover:shadow-xl transition-shadow"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <h3 className="text-3xl font-bold text-accent mb-2 font-playfair">
+              {project.name}
+            </h3>
+            <p className="text-lg text-muted-foreground mb-4 font-light">
+              {project.subtitle}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((tech) => (
+                <Badge key={tech} variant="outline" className="border-primary text-primary">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+            <ul className="space-y-2">
+              {project.description.map((desc, idx) => (
+                <li key={idx} className="flex gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span>{desc}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </Tilt>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Education Section */}
       <section id="education" className="py-20 px-4 bg-secondary">
