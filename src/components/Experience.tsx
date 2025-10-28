@@ -5,7 +5,7 @@ const Experience = () => {
   const experiences = [
     {
       company: "Bridgeon Solutions",
-      role: "Frontend Developer Intern",
+      role: "MERNSTACK Developer Intern",
       period: "2025 – Present",
       highlights: [
         "Contributed to real-world web projects with full-stack development using React, Node.js, Express, and MongoDB",
