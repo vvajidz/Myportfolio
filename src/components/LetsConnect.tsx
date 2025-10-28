@@ -3,7 +3,7 @@ import { Card } from "@/ui/card";
 
 const LetsConnect = () => {
   return (
-    <section id="contact" className="py-20 px-4 bg-black text-white">
+    <section id="contact" className="py-20 px-4 bg-transparent text-white">
       <div className="container mx-auto max-w-4xl text-center">
         <h2 className="text-4xl md:text-6xl font-bold mb-8 text-primary-foreground font-playfair" data-aos="fade-up">Let's Connect</h2>
         <p className="text-xl text-primary-foreground/90 mb-12 font-light" data-aos="fade-up" data-aos-delay="100">

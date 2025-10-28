@@ -3,7 +3,7 @@ import ShinyText from "../../components/ShinyText";
 
 const AboutMe = () => {
   return (
-    <section id="about" className="py-20 px-4 bg-black text-white">
+    <section id="about" className="py-20 px-4 bg-transparent text-white">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-6xl font-bold mb-12 font-playfair" data-aos="fade-up">
           About Me

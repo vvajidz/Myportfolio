@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import Squares from "../../components/Squares";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe";
@@ -28,16 +29,30 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background font-poppins">
-      <Navbar scrollToSection={scrollToSection} />
-      <Hero scrollToSection={scrollToSection} />
-      <AboutMe />
-      <SkillsAndTechnologies />
-      <Experience />
-      <FeaturedProjects />
-      <EducationAndCertification />
-      <LetsConnect />
-      <Footer />
+    <div className="min-h-screen font-poppins relative bg-black">
+      {/* Background Squares */}
+      <div className="fixed inset-0 z-0">
+        <Squares 
+          speed={0.5}
+          squareSize={40}
+          direction="diagonal"
+          borderColor="#420000" /* grey-300 */
+          hoverFillColor="#374151" /* grey-700 for better contrast */
+        />
+      </div>
+      
+      {/* Content with higher z-index */}
+      <div className="relative z-10">
+        <Navbar scrollToSection={scrollToSection} />
+        <Hero scrollToSection={scrollToSection} />
+        <AboutMe />
+        <SkillsAndTechnologies />
+        <Experience />
+        <FeaturedProjects />
+        <EducationAndCertification />
+        <LetsConnect />
+        <Footer />
+      </div>
     </div>
   );
 };
