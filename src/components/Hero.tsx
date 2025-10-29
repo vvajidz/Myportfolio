@@ -8,7 +8,7 @@ interface HeroProps {
 
 const Hero = ({ scrollToSection }: HeroProps) => {
   return (
-    <section id="hero" className="min-h-screen flex flex-col items-center justify-center bg-transparent text-white text-center px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="min-h-screen flex flex-col w-100% items-center justify-center bg-transparent text-white text-center px-4 sm:px-6 lg:px-8">
       {/* Responsive container for TextPressure */}
       <div className="w-full max-w-6xl mx-auto relative h-[200px] sm:h-[200px] md:h-[300px] lg:h-[350px] xl:h-[400px]">
         <TextPressure
@@ -22,7 +22,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
           italic={true}
           textColor="#ffffff"
           strokeColor="#ff0000"
-          minFontSize={120} // Reduced for mobile
+          minFontSize={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 280} // Dynamic size based on screen
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
         />
       </div>

@@ -25,7 +25,16 @@ const Index = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
+    if (element) {
+      // Use both scrollIntoView and scroll-margin-top
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      
+      // Add a backup setTimeout in case the smooth scroll is interrupted
+      setTimeout(() => {
+        const y = element.getBoundingClientRect().top + window.pageYOffset - 100; // 100px offset
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }, 100);
+    }
   };
 
   return (
@@ -34,7 +43,7 @@ const Index = () => {
       <div className="fixed inset-0 z-0">
         <Squares 
           speed={0.5}
-          squareSize={40}
+          squareSize={20}
           direction="diagonal"
           borderColor="#420000" /* grey-300 */
           hoverFillColor="#374151" /* grey-700 for better contrast */
