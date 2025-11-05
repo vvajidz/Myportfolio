@@ -9,7 +9,7 @@ const FeaturedProjects = () => {
     {
       name: "RENTWISE",
       subtitle: "Luxury Home Renting Platform",
-      sr: "https://rentwise-gilt.vercel.app/",
+      sr: "https://rentwise-gilt.vercel.ap",
       image: "https://i.pinimg.com/736x/6b/5b/a8/6b5ba8f6a459d49c4c44a9816271a60e.jpg", // optional: replace with your actual preview
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Node.js", "Express.js", "MongoDB"],
       desc: "A full-stack luxury property rental platform with filtering, maps, and smooth UI.",
