@@ -25,7 +25,7 @@ const FeaturedProjects = () => {
     {
       name: "AJFAN PIZZA",
       subtitle: "Modern Food Delivery Platform",
-      link: "https://ajfanpizza.vercel.app",
+      link: "www.ajfanpizaa.in",
       image: "https://i.pinimg.com/736x/10/db/f4/10dbf4b93b01cfc0860e60996e8025d5.jpg",
       tech: ["Next.js", "Tailwind CSS", "Firebase", "Framer Motion"],
       desc: "Interactive pizza ordering app with real-time order updates and sleek UI.",

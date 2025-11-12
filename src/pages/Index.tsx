@@ -56,8 +56,8 @@ const Index = () => {
         <Hero scrollToSection={scrollToSection} />
         <AboutMe />
         <SkillsAndTechnologies />
-        <Experience />
         <FeaturedProjects />
+        <Experience />
         <EducationAndCertification />
         <LetsConnect />
         <Footer />
